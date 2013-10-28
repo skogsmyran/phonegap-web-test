@@ -5,9 +5,7 @@ var app = {
 
 	initialize: function() {
 	var self = this;
-	var gamescreenhtml = $("#gamescreen").html();
-	var gamescreen = Handlebars.compile(gamescreenhtml);
-	self.render(gamescreen);
+	$('body').html(new Gamescreen().render().el);
 	},
 };
 
