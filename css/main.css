@@ -93,4 +93,73 @@
     border:2px solid #F2F2F2;
     background-color:#D1D1D1;
     overflow:auto;
+    text-align: center;
 }
+
+
+#loginarea {
+    width:45%;
+    height:60%;
+    margin-left:auto;
+    margin-top:5%;
+    margin-right: auto;
+    border-radius:5px; 
+    border:2px solid #F2F2F2;
+    text-align:center;
+}
+
+.midwrapper {
+    width:45%;
+    height:60%;
+    margin-left:auto;
+    margin-top:5%;
+    margin-right: auto;
+    border-radius:5px; 
+    border:2px solid #F2F2F2;
+    text-align:center;
+}
+
+input:required {
+	border: 1px solid red;
+}
+
+.loginform ul {  
+    padding: 0;  
+    margin: 0;  
+}  
+.loginform li {  
+    display: inline;  
+    float: left;  
+}  
+
+label {  
+    display: block;  
+
+}  
+
+
+.cf:before,  
+.cf:after {  
+    content: "";   
+    display: table;  
+}  
+  
+.cf:after {  
+    clear: both;  
+}  
+.cf {  
+    *zoom: 1;  
+}  
+:focus {  
+    outline: 0;  
+}  
+
+.loginform input:not([type=submit]) {  
+    padding: 5px;  
+    margin-right: 10px;  
+    border: 1px solid rgba(0, 0, 0, 0.3);  
+    border-radius: 0px;  
+
+
+}  
+

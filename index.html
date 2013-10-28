@@ -55,6 +55,11 @@ Game 4
         <h1 class="topcoat-navigation-bar__title">Party!</h1>
     </div>
 </div>
+
+<div class="midwrapper">
+<p id="charadetodo"></p>
+<button id="startcharades" class="topcoat-button--cta" value="Login">Start!</li>  
+</div>
 </script>
 
 <script id="loginpage" type='text/x-handlebars-template'>
@@ -62,11 +67,24 @@ Game 4
     <div class="topcoat-navigation-bar__item center full">
         <h1 class="topcoat-navigation-bar__title">Party!</h1>
     </div>
-   
 </div>
- <textarea id="username"></textarea>
-        <textarea id="password"></textarea>
-        <button class="topcoat-button--cta" id="login"></button>
+<div id="loginwrapper">
+<div id="loginarea">
+<br>
+<section class="loginform cf">  
+<form name="login" action="index_submit" method="get" accept-charset="utf-8">  
+    <ul>  
+        <li><label for="usermail">Email</label>  <br>
+        <input type="email" name="usermail" id="username" placeholder="yourname@email.com" required></li>  
+        <li><br><label for="password">Password</label> <br>
+        <input type="password" name="password" id="password" placeholder="password" required></li>  
+        <li>  <br>
+        <button id="login" class="topcoat-button--cta" value="Login">Login</li>  
+    </ul>  
+</form>  
+</section>  
+</div>
+</div>
 </script>
 
 
@@ -77,16 +95,6 @@ Game 4
   <script src="js/gamescreen.js"></script>
   <script src="js/loginpage.js"></script>
   <script src="js/main.js"></script>
-
-  
-
-
-
-<script id="loginscreen" type="text/x-handlebars-template">
-<div class="login">
-    <h1 id="loginheader">Login or Create account</h1>
-</div>
-</script>
 
 
 
