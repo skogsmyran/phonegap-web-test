@@ -1,11 +1,11 @@
 var app = {
-	render: function(screentorender) {	
+	/*render: function(screentorender) {	
 		$('body').html(screentorender);
-	},
+	},*/
 
 	initialize: function() {
-	var self = this;
-	$('body').html(new Gamescreen().render().el);
+		var self = this;
+		$('body').html(new Gamescreen().render().el);
 	},
 };
 
