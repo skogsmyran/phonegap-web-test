@@ -1,6 +1,6 @@
 var app = {
 	render: function(screentorender) {	
-		$(document.body).append(screentorender);
+		$('body').html(screentorender);
 	},
 
 	initialize: function() {
