@@ -74,13 +74,37 @@
     </div>
 </div>
 <div class="midwrapper">
-  <div class="gamewrapper">
+  <div class="contentwrapper">
     <p id="charadeinstructions">Press start to play!</p>
     <button id="startcharades" class="topcoat-button">Start!</button><br>
   </div>
 </div>
 </script>
 
+<!--<script id="contentpage" type='text/x-handlebars-template'>
+  <div class="topcoat-navigation-bar">
+    <div class="topcoat-navigation-bar__item center full">
+        <h1 class="topcoat-navigation-bar__title">username</h1>
+    </div>
+</div>
+<div class="midwrapper">
+  <div class="contentwrapper">
+  </div>
+</div>
+</script>
+
+
+<script id="logincontent" type='text/x-handlebars-template'>
+  <section class="loginform cf"> 
+      <p>Email</p><input type="email" name="usermail" class="topcoat-text-input" id="username" placeholder="yourname@email.com" required> 
+      <br>
+      <p>Password</p>
+      <input type="password" name="password" class="topcoat-text-input" id="password" placeholder="password" required>
+      <br>
+      <br>
+      <button id="login" class="topcoat-button" id="login">Login</button>
+    </section>  
+</script>-->
 
 
 
@@ -91,22 +115,22 @@
     </div>
 </div>
 <div class="midwrapper">
-<div class="login">
-<section class="loginform cf"> 
-        <p>Email</p><input type="email" name="usermail" class="topcoat-text-input" id="username" placeholder="yourname@email.com" required> 
-        <br>
-        <p>Password</p>
-        <input type="password" name="password" class="topcoat-text-input" id="password" placeholder="password" required>
-        <br>
-        <br>
-        <button id="login" class="topcoat-button" id="login">Login</button>
-</section>  
-</div>
+  <div class="contentwrapper">
+    <section class="loginform cf"> 
+      <p>Email</p><input type="email" name="usermail" class="topcoat-text-input-mod" id="username" placeholder="yourname@email.com" required> 
+      <br>
+      <p>Password</p>
+      <input type="password" name="password" class="topcoat-text-input-mod" id="password" placeholder="password" required>
+      <br>
+      <br>
+      <button id="login" class="topcoat-button" id="login">Login</button>
+    </section>  
+  </div>
 </div>
 </script>
 
 
-  <script src="js/handlebars.js"></script>
+  <script src="lib/handlebars.js"></script>
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
   <script src="js/gamecharades.js"></script>
