@@ -39,7 +39,7 @@ var Loginpage = function() {
 	this.registerEvents = function() {
 		var self = this;
 		this.el.on("click", "#password", function() {
-			console.log("clicked");
+			
 		});
 		this.el.on("click", "#login", function() {
 			self.validateForm();

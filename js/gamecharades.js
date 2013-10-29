@@ -42,7 +42,7 @@ var Gamecharades = function() {
 
 	this.endround = function() {
 		var self = this;
-		$('.gamewrapper').html(charadesendround);
+		$('.contentwrapper').html(charadesendround);
 	}
 
 	this.endgame = function() {
@@ -53,7 +53,7 @@ var Gamecharades = function() {
 		console.log(t2score);
 		$('#t1score').append(t1score);
 		$('#t2score').append(t2score);
-		$('.gamewrapper').html(endofgame);
+		$('.contentwrapper').html(endofgame);
 	}
 
 	this.startround = function() {
@@ -68,7 +68,7 @@ var Gamecharades = function() {
 			var charadetodisplay = self.getcharade();
 			var charadesdata = [{"charade": charadetodisplay}];
 			console.log(charadetodisplay);
-			$('.gamewrapper').html(charadesstartround(charadesdata));
+			$('.contentwrapper').html(charadesstartround(charadesdata));
 			$('#charadetodo').append(charadetodisplay);
 			self.timer();
 			return;
