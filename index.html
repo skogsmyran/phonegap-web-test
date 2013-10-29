@@ -55,26 +55,40 @@ Game 4
 </div>
 </script>
 
+<script id="charadesendround" type='text/x-handlebars-template'>
+<p id="charadeinstructions">Who won this round?</p>
+<button id="team1" class="topcoat-button">Team1</button>
+<button id="team2" class="topcoat-button">Team2</button>
+</script>
+
+<script id="charadesstartround" type='text/x-handlebars-template'>
+<p id="charadeinstructions">The object you should describe to your team is;</p>
+<p id="charadetodo">{{ charade }}</p>
+<br>
+<p id="Timer"></p>
+<button id="endround" class="topcoat-button">End round!</button>
+</script>
+
+<script id="addmembers" type='text/x-handlebars-template'>
+<input type="email" class="topcoat-text-input" placeholder="player"> 
+</script>
+
 <script id="gamecharades" type='text/x-handlebars-template'>
   <div class="topcoat-navigation-bar">
     <div class="topcoat-navigation-bar__item center full">
         <h1 class="topcoat-navigation-bar__title">username</h1>
     </div>
 </div>
-
 <div class="midwrapper">
 <div class="gamewrapper">
-
 <p id="charadeinstructions">Press start to play!</p>
-<p id="charadetodo"></p>
 <button id="startcharades" class="topcoat-button">Start!</button><br>
-<button id="team1" class="topcoat-button" hidden="hidden">Team1</button>
-<button id="team2" class="topcoat-button" hidden="hidden">Team2</button>
-<br>
-<p id="Timer"></p>
 </div>
 </div>
 </script>
+
+
+
 
 <script id="loginpage" type='text/x-handlebars-template'>
   <div class="topcoat-navigation-bar">

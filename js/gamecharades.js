@@ -20,12 +20,7 @@ var Gamecharades = function() {
 
 	this.endround = function(round, rounds, t1score, t2score) {
 		var self = this;
-		$('#team1').css("visibility", "visible");
-		$('#team2').css("visibility", "visible");
-		$('#charadetodo').css("visibility","hidden");
-		$('#Timer').css("visibility", "hidden");
-		var charadeinstructions = "Who won this round?"
-		document.getElementById('charadeinstructions').innerHTML = charadeinstructions;
+		$('.gamewrapper').html(charadesendround);
 		this.el.on("click", "#team1", function(round,rounds,t1score,t2score) {
 			t1score = t1score + 1;
 			round++;
@@ -46,41 +41,41 @@ var Gamecharades = function() {
 
 	this.startround = function(round, rounds, t1score, t2score) {
 		var self = this;
-		$('#team1').css("visibility", "hidden");
-		$('#team2').css("visibility", "hidden");
-		$('#charadetodo').css("visibility","visible");
 		if (round == rounds) {
 			self.endgame(t1score,t2score);
 		}
-		var charadeinstructions = "The object you should describe to your team is;"
-		document.getElementById('charadeinstructions').innerHTML = charadeinstructions;
 		var charadetodisplay = self.getcharade();
-		document.getElementById('charadetodo').innerHTML = charadetodisplay;
-		$('#Timer').css("visibility", "visible");
+		var charadesdata = [{"charade": charadetodisplay}];
+		console.log(charadetodisplay);
+		$('.gamewrapper').html(charadesstartround(charadesdata));
+		$('#charadetodo').append(charadetodisplay);
 		self.timer(round, rounds, t1score, t2score);
 	}
 
 	this.game = function(rounds) {
 		var self = this;
-		$('#startcharades').remove();
+		$('#startcharades').detach();
 		var rounds = rounds;
 		var t1score = 0;
 		var t2score = 0;
-		var timer = 30;
 		this.startround(1,rounds,0,0);
 	},
 
 	this.timer = function(round, rounds, t1score, t2score) {
 		var self = this;
-		var timer = 30;
+		var timer = 31;
 		var countdown = window.setInterval(function() {
 			if (timer > 0) {
 				timer = timer-1;
-				document.getElementById('Timer').innerHTML = timer
+				document.getElementById('Timer').innerHTML = "Time remaining: " + timer + "s"
+				self.el.on("click", "#endround", function() {
+					self.endround(round, rounds, t1score, t2score);
+					clearInterval(countdown);
+			});
 			} else {
 				self.endround(round, rounds, t1score, t2score);
 				clearInterval(countdown);				
-			}	
+			}
 		}, 1000);
 	},
 
@@ -90,10 +85,18 @@ var Gamecharades = function() {
         return charadesarray[generatedid];
 	},
 
+	
+
 	this.initialize();
 };
 
 var gamecharadeshtml = $("#gamecharades").html();
 Gamecharades.template = Handlebars.compile(gamecharadeshtml);
+
+var charadesendroundhtml = $("#charadesendround").html();
+var charadesendround = Handlebars.compile(charadesendroundhtml);
+
+var charadesstartroundhtml = $("#charadesstartround").html();
+var charadesstartround = Handlebars.compile(charadesstartroundhtml);
 
 var charadesarray = ["Wings","Guitar","Cow","Summer","Elbow","Rope","Ball","Rollerblade","Fang","Snowball","Turtle","Ear","Cheek","Smile","Jar","Tail","Basketball","Mouth","Telephone","Star","Tree","Airplane","Point","Alarm","Table tennis","Beg","Drum","Cape","Chin","Roof","Rain","Saddle","Room"]
