@@ -4,7 +4,6 @@
   <title>Testing..</title>
   <script src="css/source-sans-pro.js"></script>
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-  <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/topcoat-mobile-light.css" />
   <link rel="stylesheet" href="css/main.css" />
 </head>
@@ -14,7 +13,7 @@
 <script id="gamescreen" type="text/x-handlebars-template">
 <div class="topcoat-navigation-bar">
     <div class="topcoat-navigation-bar__item center full">
-        <h1 class="topcoat-navigation-bar__title">Party!</h1>
+        <h1 class="topcoat-navigation-bar__title">username</h1>
     </div>
 </div>
 
@@ -58,36 +57,43 @@ Game 4
 <script id="gamecharades" type='text/x-handlebars-template'>
   <div class="topcoat-navigation-bar">
     <div class="topcoat-navigation-bar__item center full">
-        <h1 class="topcoat-navigation-bar__title">Party!</h1>
+        <h1 class="topcoat-navigation-bar__title">username</h1>
     </div>
 </div>
 
 <div class="midwrapper">
+<div class="gamewrapper">
+
+<p id="charadeinstructions">Press start to play!</p>
 <p id="charadetodo"></p>
-<button id="startcharades" class="topcoat-button--cta" value="Login">Start!</li>  
+<button id="startcharades" class="topcoat-button">Start!</button><br>
+<button id="team1" class="topcoat-button" hidden="hidden">Team1</button>
+<button id="team2" class="topcoat-button" hidden="hidden">Team2</button>
+<br>
+<p id="Timer"></p>
+</div>
 </div>
 </script>
 
 <script id="loginpage" type='text/x-handlebars-template'>
   <div class="topcoat-navigation-bar">
     <div class="topcoat-navigation-bar__item center full">
-        <h1 class="topcoat-navigation-bar__title">Party!</h1>
+        <h1 class="topcoat-navigation-bar__title">username</h1>
     </div>
 </div>
 <div class="midwrapper">
-<br>
-<section class="loginform cf">  
-<form name="login" action="index_submit" method="get" accept-charset="utf-8">  
-    <ul>  
-        <li><label for="usermail">Email</label>  <br>
-        <input type="email" name="usermail" id="username" placeholder="yourname@email.com" required></li>  
-        <li><br><label for="password">Password</label> <br>
-        <input type="password" name="password" id="password" placeholder="password" required></li>  
-        <li>  <br>
-        <button id="login" class="topcoat-button--cta" value="Login">Login</li>  
-    </ul>  
-</form>  
+<div class="login">
+<section class="loginform cf"> 
+        <p>Email</p> 
+        <input type="email" name="usermail" class="topcoat-text-input" id="username" placeholder="yourname@email.com" required> 
+        <br>
+        <p>Password</p>
+        <input type="password" name="password" class="topcoat-text-input" id="password" placeholder="password" required>
+        <br>
+        <br>
+        <button id="login" class="topcoat-button" id="login">Login</button>
 </section>  
+</div>
 </div>
 </script>
 
