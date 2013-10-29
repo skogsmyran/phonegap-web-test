@@ -1,111 +1,11 @@
-#notif {
-    top:10px;
-    left:0px;
-    float:right;
-}
-
-.game {
-	position:relative;
-	width:40%;
-	height:35%;
-    margin-left:5%;
-    margin-top:5%;
-    border-radius:5px; 
-    border:2px solid #F2F2F2;
-    background-color:#D1D1D1;
-}
-
-#g1 {
-	float:left;
-	margin-left:25px;
-	margin-right:5px;
-	margin-top:30px;
-	margin-bottom:10px;
-}
-
-#g2 {
-	float:right;
-	margin-left:5px;
-	margin-right:25px;
-	margin-top:30px;
-	margin-bottom:10px;
-}
-
-#g3 {
-	float:left;
-	margin-left:25px;
-	margin-right:5px;
-	margin-top:10px;
-	margin-bottom:10px;
-}
-
-#g4 {
-	float:right;
-	margin-left:5px;
-	margin-right:25px;
-	margin-top:10px;
-	margin-bottom:10px;
-}
-
-.gametitle {
-	font-size:1.5em;
-	text-align:center;
-}
-
-.gamedescription {
-	font-size:0.8em;
-	text-align:center;
-	margin-left: 5px;
-	margin-right: 5px;
-}
-
-#play1 {
-	margin-left:40%;
-	margin-top:30px;
-	margin-bottom:25px;
-}
-
-#play2 {
-	margin-left:40%;
-	margin-top:50px;
-	margin-bottom:25px;
-}
-
-#play3 {
-	margin-left:40%;
-	margin-top:30px;
-	margin-bottom:25px;
-}
-
-#play4 {
-	margin-left:40%;
-	margin-top:30px;
-	margin-bottom:25px;
-}
-
-.login {
-	position:relative;
-    width:45%;
-    height:30%;
-    margin-left:5%;
-    margin-top:5%;
-    border-radius:5px; 
-    border:2px solid #F2F2F2;
-    background-color:#D1D1D1;
-    overflow:auto;
-    text-align: center;
-}
-
-
-#loginarea {
-    width:45%;
-    height:60%;
-    margin-left:auto;
-    margin-top:5%;
-    margin-right: auto;
-    border-radius:5px; 
-    border:2px solid #F2F2F2;
+.sitewrapper {
+    position:absolute;
+    display:table;
     text-align:center;
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:20px;
 }
 
 .midwrapper {
@@ -118,6 +18,61 @@
     border:2px solid #F2F2F2;
     text-align:center;
 }
+
+.game {
+    float:left;
+    display:table-cell;
+    vertical-align: middle;
+    text-align:center;
+    width:45%;
+    height:45%;
+    border-radius:5px; 
+    border:2px solid #F2F2F2;
+    background-color:#E6E6E6;
+    overflow:auto;
+}
+
+.game:hover {
+    background-color:#FFFFFF;
+}
+
+
+.gametitle {
+	font-size:1em;
+
+}
+
+.gamedescription {
+	font-size:0.8em;
+}
+
+/* .login {
+    position:relative;
+    width:45%;
+    height:30%;
+    margin-left:5%;
+    margin-top:5%;
+    border-radius:5px; 
+    border:2px solid #F2F2F2;
+    background-color:#D1D1D1;
+    overflow:auto;
+    text-align: center;
+}
+
+
+
+#loginarea {
+    width:45%;
+    height:60%;
+    margin-left:auto;
+    margin-top:5%;
+    margin-right: auto;
+    border-radius:5px; 
+    border:2px solid #F2F2F2;
+    text-align:center;
+}
+*/
+
 
 input:required {
 	border: 1px solid red;
