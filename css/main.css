@@ -1,7 +1,7 @@
 
 /* SITE WRAPPERS (sitewrapper 100% & midwrapper 65%) */
 body {
-    font-size:1.8em;
+    font-size:1.2em;
 }
 
 
@@ -18,7 +18,7 @@ body {
 .midwrapper {
     width:95%;
     height:95%;
-    font-size:2em;
+    font-size:1.2em;
     margin-left:auto;
     margin-top:2%;
     margin-right: auto;
