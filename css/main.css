@@ -1,5 +1,9 @@
 
 /* SITE WRAPPERS (sitewrapper 100% & midwrapper 65%) */
+body {
+    font-size:1.8em;
+}
+
 
 .sitewrapper {
     position:absolute;
@@ -12,11 +16,11 @@
 }
 
 .midwrapper {
-
-    width:75%;
-    height:75%;
+    width:85%;
+    height:85%;
+    font-size:1.5em;
     margin-left:auto;
-    margin-top:5%;
+    margin-top:2%;
     margin-right: auto;
     border-radius:5px; 
     border:2px solid #F2F2F2;
