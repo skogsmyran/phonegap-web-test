@@ -14,54 +14,82 @@ var Gamecharades = function() {
 	this.registerEvents = function() {
 		var self = this;
 		this.el.on("click", "#startcharades", function() {
-			self.game(10);
+			self.newgame(10, 0, 0);
+		});
+		this.el.on("click", "#team1", function() {
+			var t1score = window.localStorage.getItem("t1score");
+			t1score++;
+			window.localStorage.setItem("t1score", t1score);
+			var round = window.localStorage.getItem("round")
+			round++;
+			window.localStorage.setItem("round", round);
+			console.log(t1score);
+			console.log(round);
+			self.startround();
+		});
+		this.el.on("click", "#team2", function() {
+			var t2score = window.localStorage.getItem("t2score");
+			t2score++;
+			window.localStorage.setItem("t2score", t2score);
+			var round = window.localStorage.getItem("round")
+			round++;
+			window.localStorage.setItem("round", round);
+			console.log(t2score);
+			console.log(round);
+			self.startround();
 		});
 	},
 
-	this.endround = function(round, rounds, t1score, t2score) {
+	this.endround = function() {
 		var self = this;
 		$('.gamewrapper').html(charadesendround);
-		this.el.on("click", "#team1", function(round,rounds,t1score,t2score) {
-			t1score = t1score + 1;
-			round++;
-			console.log(t1score);
-			self.startround(round, rounds, t1score, t2score);
-		});
-		this.el.on("click", "#team2", function(round,rounds,t1score,t2score) {
-			t2score = t2score + 1;
-			round++;
-			console.log(t2score);
-			self.startround(round, rounds, t1score, t2score);
-		});
 	}
 
-	this.endgame = function(t1score,t2score) {
+	this.endgame = function() {
 		console.log("endgame");
+		var t2score = window.localStorage.getItem("t2score");
+		var t1score = window.localStorage.getItem("t1score");
+		console.log(t1score);
+		console.log(t2score);
+		$('#t1score').append(t1score);
+		$('#t2score').append(t2score);
+		$('.gamewrapper').html(endofgame);
 	}
 
-	this.startround = function(round, rounds, t1score, t2score) {
+	this.startround = function() {
 		var self = this;
+		var round = window.localStorage.getItem("round");
+		var rounds = window.localStorage.getItem("rounds");
+		console.log(round + "," + rounds); 
 		if (round == rounds) {
-			self.endgame(t1score,t2score);
+			self.endgame();
+			return;
+		} else {
+			var charadetodisplay = self.getcharade();
+			var charadesdata = [{"charade": charadetodisplay}];
+			console.log(charadetodisplay);
+			$('.gamewrapper').html(charadesstartround(charadesdata));
+			$('#charadetodo').append(charadetodisplay);
+			self.timer();
+			return;
 		}
-		var charadetodisplay = self.getcharade();
-		var charadesdata = [{"charade": charadetodisplay}];
-		console.log(charadetodisplay);
-		$('.gamewrapper').html(charadesstartround(charadesdata));
-		$('#charadetodo').append(charadetodisplay);
-		self.timer(round, rounds, t1score, t2score);
+		return;
 	}
 
-	this.game = function(rounds) {
+	this.newgame = function(rounds, t1players, t2players) {
+		var rounds = parseFloat(rounds);
+		window.localStorage.setItem("rounds", rounds);
+		window.localStorage.setItem("round", 0);
+		window.localStorage.setItem("t1players", t1players);
+		window.localStorage.setItem("t2players", t2players);
+		window.localStorage.setItem("t1score", 0);
+		window.localStorage.setItem("t2score", 0);
 		var self = this;
 		$('#startcharades').detach();
-		var rounds = rounds;
-		var t1score = 0;
-		var t2score = 0;
-		this.startround(1,rounds,0,0);
+		this.startround();
 	},
 
-	this.timer = function(round, rounds, t1score, t2score) {
+	this.timer = function() {
 		var self = this;
 		var timer = 31;
 		var countdown = window.setInterval(function() {
@@ -69,12 +97,14 @@ var Gamecharades = function() {
 				timer = timer-1;
 				document.getElementById('Timer').innerHTML = "Time remaining: " + timer + "s"
 				self.el.on("click", "#endround", function() {
-					self.endround(round, rounds, t1score, t2score);
+					self.endround();
 					clearInterval(countdown);
+					return;
 			});
 			} else {
-				self.endround(round, rounds, t1score, t2score);
-				clearInterval(countdown);				
+				self.endround();
+				clearInterval(countdown);	
+				return;			
 			}
 		}, 1000);
 	},
@@ -90,6 +120,8 @@ var Gamecharades = function() {
 	this.initialize();
 };
 
+
+
 var gamecharadeshtml = $("#gamecharades").html();
 Gamecharades.template = Handlebars.compile(gamecharadeshtml);
 
@@ -98,5 +130,8 @@ var charadesendround = Handlebars.compile(charadesendroundhtml);
 
 var charadesstartroundhtml = $("#charadesstartround").html();
 var charadesstartround = Handlebars.compile(charadesstartroundhtml);
+
+var endofgamehtml = $("#endofgame").html();
+var endofgame = Handlebars.compile(endofgamehtml);
 
 var charadesarray = ["Wings","Guitar","Cow","Summer","Elbow","Rope","Ball","Rollerblade","Fang","Snowball","Turtle","Ear","Cheek","Smile","Jar","Tail","Basketball","Mouth","Telephone","Star","Tree","Airplane","Point","Alarm","Table tennis","Beg","Drum","Cape","Chin","Roof","Rain","Saddle","Room"]
