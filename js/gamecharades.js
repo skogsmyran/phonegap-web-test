@@ -4,7 +4,6 @@ var Gamecharades = function() {
 		var self = this;
 		this.el = $('<div/>');
 		self.registerEvents();
-		console.log(teamscores.teams[0].players[0].player)
 	},
 	
 	this.render = function() {
@@ -24,8 +23,6 @@ var Gamecharades = function() {
 			var round = window.localStorage.getItem("round")
 			round++;
 			window.localStorage.setItem("round", round);
-			console.log(t1score);
-			console.log(round);
 			self.startround();
 		});
 		this.el.on("click", "#team2", function() {
@@ -35,8 +32,6 @@ var Gamecharades = function() {
 			var round = window.localStorage.getItem("round")
 			round++;
 			window.localStorage.setItem("round", round);
-			console.log(t2score);
-			console.log(round);
 			self.startround();
 		});
 	},
@@ -47,12 +42,12 @@ var Gamecharades = function() {
 	}
 
 	this.endgame = function() {
-		console.log("endgame");
 		var t2score = teamscores.teams[1].score;
 		var t1score = teamscores.teams[0].score;
 		window.localStorage.removeItem("round");
 		window.localStorage.removeItem("rounds");
 		$('.contentwrapper').html(endofgame(teamscores));
+		$('#rightwrapper').detach();
 	}
 
 	this.startround = function() {
@@ -68,7 +63,7 @@ var Gamecharades = function() {
 			var charadesdata = [{"charade": charadetodisplay}];
 			console.log(charadetodisplay);
 			$('.contentwrapper').html(charadesstartround);
-			$('.leftwrapper').html(renderscores(teamscores))
+			$('#rightwrapper').html(renderscores(teamscores))
 			$('#charadetodo').append(charadetodisplay);
 			self.timer();
 			return;

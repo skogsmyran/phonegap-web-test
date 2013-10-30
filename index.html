@@ -1,5 +1,8 @@
+
 <html lang="en">
 <head>
+<!DOCTYPE html>
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Testing..</title>
@@ -28,8 +31,6 @@
     </ul>
   </div>
 </nav>
-
-
 <div class="container">
   <div class="game" id="g1">
     <h1 class="gametitle">Charades</h1>
@@ -77,11 +78,11 @@
 {{/players}}
 {{/teams}}
 
-
-
 </script>
 
 <script id="gamecharades" type='text/x-handlebars-template'>
+
+<div id="wrap"> 
 <nav class="navbar navbar-default" role="navigation">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -101,40 +102,48 @@
 
 
 
+<div class="col-sm-4 col-md-4">
+</div>
+
+<div class="col-sm-4 col-md-4">
 
 <div class="midwrapper">
-  <div class="contentwrapper">
+
+<div class="contentwrapper">
+
     <p id="charadeinstructions">Press start to play!</p><br>
     <button id="startcharades" class="btn btn-default">Start</button><br>
-  </div>
-</div>
-
-
-<div class="leftwrapper">
 
 </div>
 
-  <div class="rightwrapper">
+</div>
 
-  </div>
+</div>
+
+<div class="col-sm-4 col-md-4" id="rightwrapper">
+</div>
+
+</div> 
+
 
 </script>
 
 <script id="teamscores" type='text/x-handlebars-template'>
+<div class="scores">
 {{#teams}}
-<div class="team">
-<p class="team">{{team}} Score: {{score}}</p>
-{{#players}}
-<p class="team">{{team}} Players: {{player}}</p>
-{{/players}}
-</div>
+<p class="team">{{team}} Score: <b>{{score}} </b>  
+{{#players}}, 
+Players: {{player}}
+{{/players}}</p>
 {{/teams}}
+</div>
 </script>
 
 
 
 <script id="loginpage" type='text/x-handlebars-template'>
 
+
 <nav class="navbar navbar-default" role="navigation">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -152,9 +161,12 @@
   </div>
 </nav>
 
+<div class="col-sm-4 col-md-4">
+</div>
 
-<div class="midwrapper">
-  <div class="contentwrapper">
+
+  <div class="col-sm-4 col-md-4">
+  <div class="container">
       <form class="form-signin">
         <h2 class="form-signin-heading">Please sign in</h2>
         <input type="text" class="form-control" id="username" placeholder="Email address" autofocus>
@@ -164,8 +176,16 @@
         </label>
         <button class="btn btn-lg btn-primary btn-block" id="login">Sign in</button>
       </form>
-  </div>
 </div>
+  </div>
+
+<div class="col-sm-4 col-md-4">
+</div>
+
+
+
+
+
 </script>
 
   

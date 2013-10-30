@@ -31,6 +31,14 @@ body
     margin-top:2%;
 }
 
+.scores {
+    margin: 1%;
+    border-radius: 5px;
+    border: 2px solid #F2F2F2;
+    background-color: #F2F2F2;
+    overflow: auto;
+}
+
 
 .midwrapper {
 	width: 0%;
@@ -104,12 +112,18 @@ display:table;
 	margin: 5px;
 }
 /*GAMEPLAY*/
-.contentwrapper
-{
-	display: inline-block;
-	vertical-align: middle;
-	text-align: center;
+.contentwrapper {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
 }
+
+#rightwrapper {
+    text-align: center;
+    margin-top:5%;
+
+}
+
 .topcoat-text-input-mod
 {
 	padding: 0;
