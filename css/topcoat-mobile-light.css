@@ -810,16 +810,7 @@
 *
 */
 
-input[type="checkbox"] {
-  position: absolute;
-  overflow: hidden;
-  padding: 0;
-  border: 0;
-  opacity: 0.001;
-  z-index: 1;
-  vertical-align: top;
-  outline: none;
-}
+
 
 .checkbox {
   -moz-box-sizing: border-box;
@@ -918,16 +909,7 @@ input[type="checkbox"] {
 *
 */
 
-input[type="checkbox"] {
-  position: absolute;
-  overflow: hidden;
-  padding: 0;
-  border: 0;
-  opacity: 0.001;
-  z-index: 1;
-  vertical-align: top;
-  outline: none;
-}
+
 
 .checkbox,
 .topcoat-checkbox__checkmark {
