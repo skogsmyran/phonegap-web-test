@@ -1,23 +1,37 @@
+
 <html lang="en">
 <head>
+<!DOCTYPE html>
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Testing..</title>
-  <script src="css/source-sans-pro.js"></script>
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-  <link rel="stylesheet" href="css/topcoat-mobile-light.css" />
+  <link rel="stylesheet" href="css/bootstrap.css" />
   <link rel="stylesheet" href="css/main.css" />
+
 </head>
 
 <body>
 
 <script id="gamescreen" type="text/x-handlebars-template">
-<div class="topcoat-navigation-bar">
-    <div class="topcoat-navigation-bar__item center full">
-        <h1 class="topcoat-navigation-bar__title">username</h1>
-    </div>
-</div>
-<div class="sitewrapper">
+<nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#start">Home</a>
+  </div>
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#login">Login</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
   <div class="game" id="g1">
     <h1 class="gametitle">Charades</h1>
     <p class="gamedescription">A game of charades, one player describes an object unknown to the others and they try to guess what the object is.</p>
@@ -40,103 +54,150 @@
 
 <script id="charadesendround" type='text/x-handlebars-template'>
 <p id="charadeinstructions">Who won this round?</p>
-<button id="team1" class="topcoat-button">Team1</button>
-<button id="team2" class="topcoat-button">Team2</button>
+<button id="team1" class="btn btn-default">Team1</button>
+<button id="team2" class="btn btn-default">Team2</button>
 </script>
 
 <script id="charadesstartround" type='text/x-handlebars-template'>
   <p id="charadeinstructions">The object you should describe to your team is;</p>
-  <p id="charadetodo">{{ charade }}</p>
+  <p id="charadetodo"></p>
   <br>
   <p id="Timer"></p>
-  <button id="endround" class="topcoat-button">End round!</button>
+  <button id="endround" class="btn btn-default">End round</button>
+
+
 </script>
 
-<script id="addmembers" type='text/x-handlebars-template'>
-  <input type="email" class="topcoat-text-input" placeholder="player" /> 
-</script> 
 
 <script id="endofgame" type='text/x-handlebars-template'>
-<div id="team1">
-<p class="t1score">Team 1 Score: </p>
-<p class="t1player"></p>
-</div>
-<div class="team2">
-<p id="t2score">Team 2 Score:</p>
-<p class="t1player"></p>
-</div>
+
+{{#teams}}
+<p class="teams">{{team}} Score: {{score}}</p>
+{{#players}}
+<p class="team">{{player}}</p>
+{{/players}}
+{{/teams}}
+
 </script>
 
 <script id="gamecharades" type='text/x-handlebars-template'>
-  <div class="topcoat-navigation-bar">
-    <div class="topcoat-navigation-bar__item center full">
-        <h1 class="topcoat-navigation-bar__title">username</h1>
-    </div>
-</div>
-<div class="midwrapper">
-  <div class="contentwrapper">
-    <p id="charadeinstructions">Press start to play!</p>
-    <button id="startcharades" class="topcoat-button">Start!</button><br>
+
+<div id="wrap"> 
+<nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#start">Home</a>
   </div>
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#login">Login</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+
+<div class="col-sm-4 col-md-4">
 </div>
+
+<div class="col-sm-4 col-md-4">
+
+<div class="midwrapper">
+
+<div class="contentwrapper">
+
+    <p id="charadeinstructions">Press start to play!</p><br>
+    <button id="startcharades" class="btn btn-default">Start</button><br>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-sm-4 col-md-4" id="rightwrapper">
+</div>
+
+</div> 
+
+
 </script>
 
-<!--<script id="contentpage" type='text/x-handlebars-template'>
-  <div class="topcoat-navigation-bar">
-    <div class="topcoat-navigation-bar__item center full">
-        <h1 class="topcoat-navigation-bar__title">username</h1>
-    </div>
-</div>
-<div class="midwrapper">
-  <div class="contentwrapper">
-  </div>
+<script id="teamscores" type='text/x-handlebars-template'>
+<div class="scores">
+{{#teams}}
+<p class="team">{{team}} Score: <b>{{score}} </b>  
+{{#players}}, 
+Players: {{player}}
+{{/players}}</p>
+{{/teams}}
 </div>
 </script>
-
-
-<script id="logincontent" type='text/x-handlebars-template'>
-  <section class="loginform cf"> 
-      <p>Email</p><input type="email" name="usermail" class="topcoat-text-input" id="username" placeholder="yourname@email.com" required> 
-      <br>
-      <p>Password</p>
-      <input type="password" name="password" class="topcoat-text-input" id="password" placeholder="password" required>
-      <br>
-      <br>
-      <button id="login" class="topcoat-button" id="login">Login</button>
-    </section>  
-</script>-->
 
 
 
 <script id="loginpage" type='text/x-handlebars-template'>
-  <div class="topcoat-navigation-bar">
-    <div class="topcoat-navigation-bar__item center full">
-        <h1 class="topcoat-navigation-bar__title">username</h1>
-    </div>
-</div>
-<div class="midwrapper">
-  <div class="contentwrapper">
-    <section class="loginform cf"> 
-      <p>Email</p><input type="email" name="usermail" class="topcoat-text-input-mod" id="username" placeholder="yourname@email.com" required> 
-      <br>
-      <p>Password</p>
-      <input type="password" name="password" class="topcoat-text-input-mod" id="password" placeholder="password" required>
-      <br>
-      <br>
-      <button id="login" class="topcoat-button" id="login">Login</button>
-    </section>  
+
+
+<nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#start">Home</a>
   </div>
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#login">Login</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="col-sm-4 col-md-4">
 </div>
+
+
+  <div class="col-sm-4 col-md-4">
+  <div class="container">
+      <form class="form-signin">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <input type="text" class="form-control" id="username" placeholder="Email address" autofocus>
+        <input type="password" class="form-control" id="password" placeholder="Password">
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+        <button class="btn btn-lg btn-primary btn-block" id="login">Sign in</button>
+      </form>
+</div>
+  </div>
+
+<div class="col-sm-4 col-md-4">
+</div>
+
+
+
+
+
 </script>
 
-
+  
   <script src="lib/handlebars.js"></script>
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <script src="js/bootstrap.js"></script>
   <script src="js/gamecharades.js"></script>
   <script src="js/gamescreen.js"></script>
   <script src="js/loginpage.js"></script>
   <script src="js/main.js"></script>
+
 
 
 

@@ -84,6 +84,10 @@ var app = {
 		if (hash == "#login") {
 			self.slidePage($('body').html(new Loginpage().render().el));
 		}
+		if (hash == "#start") {
+			this.homePage = $('body').html(new Gamescreen().render().el);
+			this.slidePage(this.homePage);
+		}
 	},
 
 	initialize: function() {

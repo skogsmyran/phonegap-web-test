@@ -13,6 +13,10 @@ body {
     position: relative;
 }
 
+.scores {
+    float:left;
+}
+
 .header {
     background: #666;
     -webkit-background-size: 1px 44px;
