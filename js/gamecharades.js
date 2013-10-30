@@ -61,7 +61,6 @@ var Gamecharades = function() {
 		} else {
 			var charadetodisplay = self.getcharade();
 			var charadesdata = [{"charade": charadetodisplay}];
-			console.log(charadetodisplay);
 			$('.contentwrapper').html(charadesstartround);
 			$('#rightwrapper').html(renderscores(teamscores))
 			$('#charadetodo').append(charadetodisplay);
@@ -83,10 +82,12 @@ var Gamecharades = function() {
 	this.timer = function() {
 		var self = this;
 		var timer = 31;
+
 		var countdown = window.setInterval(function() {
 			if (timer > 0) {
 				timer = timer-1;
 				document.getElementById('Timer').innerHTML = "Time remaining: " + timer + "s"
+				$('#endround').css('visibility', 'visible');
 				self.el.on("click", "#endround", function() {
 					clearInterval(countdown);
 					self.endround();
