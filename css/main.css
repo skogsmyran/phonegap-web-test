@@ -1,8 +1,13 @@
 /*SITE WRAPPERS (sitewrapper 100% & midwrapper 65%)*/
-BODY
+body
 {
-	font-size: 1.2em;
+	font-size: 1.5em;
     background-color:;
+}
+
+.team {
+    font-style:source-sans-pro,serif;
+    font-size:0.8em;
 }
 
 .sitewrapper {
@@ -14,9 +19,22 @@ BODY
 	margin: 0;
 }
 
+.leftwrapper {
+    float:left;
+    margin-left:2%;
+    margin-top:2%;
+}
+
+.rightwrapper {
+    float:right;
+    margin-right:2%;
+    margin-top:2%;
+}
+
+
 .midwrapper {
 	width: 0%;
-	height: 43%;
+    margin-bottom:2%;
 	font-size: 1.2em;
 	margin-left: auto;
 	margin-top: 2%;
