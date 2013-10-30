@@ -59,25 +59,25 @@
 
 <script id="charadesstartround" type='text/x-handlebars-template'>
   <p id="charadeinstructions">The object you should describe to your team is;</p>
-  <p id="charadetodo">{{ charade }}</p>
+  <p id="charadetodo"></p>
   <br>
   <p id="Timer"></p>
-  <button id="endround" class="btn btn-default">End round!</button>
+  <button id="endround" class="btn btn-default">End round</button>
+
+
 </script>
+
 
 <script id="endofgame" type='text/x-handlebars-template'>
 
-<div id="team1">
-{{#teamscores}}
-<p class="teamscore">{{team}} Score: {{score}}</p>
-{{/teamscores}}
-<p class="t1player"></p>
-</div>
-<div class="team2">
+{{#teams}}
+<p class="teams">{{team}} Score: {{score}}</p>
+{{#players}}
+<p class="team">{{player}}</p>
+{{/players}}
+{{/teams}}
 
 
-<p class="t1player"></p>
-</div>
 
 </script>
 
@@ -98,14 +98,38 @@
     </ul>
   </div>
 </nav>
+
+
+
+
 <div class="midwrapper">
   <div class="contentwrapper">
-    <p id="charadeinstructions">Press start to play!</p>
-    <button id="startcharades" class="btn btn-default">Start!</button><br>
+    <p id="charadeinstructions">Press start to play!</p><br>
+    <button id="startcharades" class="btn btn-default">Start</button><br>
   </div>
 </div>
+
+
+<div class="leftwrapper">
+
+</div>
+
+  <div class="rightwrapper">
+
+  </div>
+
 </script>
 
+<script id="teamscores" type='text/x-handlebars-template'>
+{{#teams}}
+<div class="team">
+<p class="team">{{team}} Score: {{score}}</p>
+{{#players}}
+<p class="team">{{team}} Players: {{player}}</p>
+{{/players}}
+</div>
+{{/teams}}
+</script>
 
 
 
