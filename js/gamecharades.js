@@ -49,11 +49,11 @@ var Gamecharades = function() {
 		console.log("endgame");
 		var t2score = window.localStorage.getItem("t2score");
 		var t1score = window.localStorage.getItem("t1score");
-		console.log(t1score);
-		console.log(t2score);
-		$('#t1score').append(t1score);
-		$('#t2score').append(t2score);
-		$('.contentwrapper').html(endofgame);
+		var teamscores = { teamscores: [ 
+			{ team:"Team 1", score:t1score },
+			{ team:"Team 2", score:t2score },
+			]};
+		$('.contentwrapper').html(endofgame(teamscores));
 	}
 
 	this.startround = function() {

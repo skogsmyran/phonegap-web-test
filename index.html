@@ -28,6 +28,8 @@
     </ul>
   </div>
 </nav>
+
+
 <div class="container">
   <div class="game" id="g1">
     <h1 class="gametitle">Charades</h1>
@@ -64,14 +66,19 @@
 </script>
 
 <script id="endofgame" type='text/x-handlebars-template'>
+
 <div id="team1">
-<p class="t1score">Team 1 Score: </p>
+{{#teamscores}}
+<p class="teamscore">{{team}} Score: {{score}}</p>
+{{/teamscores}}
 <p class="t1player"></p>
 </div>
 <div class="team2">
-<p id="t2score">Team 2 Score:</p>
+
+
 <p class="t1player"></p>
 </div>
+
 </script>
 
 <script id="gamecharades" type='text/x-handlebars-template'>
