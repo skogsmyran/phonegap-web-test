@@ -32,22 +32,24 @@
   </div>
 </nav>
 <div class="container">
-  <div class="game" id="g1">
+<div class="row">
+  <div class="col-md-6 game" id="g1">
     <h1 class="gametitle">Charades</h1>
     <p class="gamedescription">A game of charades, one player describes an object unknown to the others and they try to guess what the object is.</p>
   </div>
-  <div class="game" id="g2">
+  <div class="col-md-6 game" id="g2">
     <h1 class="gametitle">Game 2</h1>
      <p class="gamedescription">Not yet available in your region ;)</p>
   </div>
-  <br>
-  <div class="game" id="g3">
+<!--
+  <div class="col-md-6 game" id="g3">
     <h1 class="gametitle">Game 3</h1>
     <p class="gamedescription">Not yet available in your region ;)</p>
   </div>
-  <div class="game" id="g4">
+  <div class="col-md-6 game" id="g4">
     <h1 class="gametitle">Game 4</h1>
     <p class="gamedescription">Not yet available in your region ;)</p>
+  </div> -->
   </div>
 </div>
 </script>
@@ -126,6 +128,8 @@
 </div> 
 
 
+
+
 </script>
 
 <script id="teamscores" type='text/x-handlebars-template'>
@@ -143,6 +147,7 @@ Players: {{player}}
 
 <script id="loginpage" type='text/x-handlebars-template'>
 
+<div id="wrap">
 
 <nav class="navbar navbar-default" role="navigation">
   <div class="navbar-header">
@@ -181,10 +186,17 @@ Players: {{player}}
 
 <div class="col-sm-4 col-md-4">
 </div>
+<div id="push">
 
+</div>
 
+</div>
 
-
+<div id="footer">
+      <div class="container">
+        <p class="text-muted credit" id="credit">Made by <a href="http://github.com/pppontusw">Pontus Wiberg</a></a>.</p>
+      </div>
+    </div>
 
 </script>
 

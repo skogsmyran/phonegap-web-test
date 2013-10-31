@@ -81,19 +81,16 @@ display:table;
 
 
 
-/* GAMESCREEN*/
+/* GAMESCREEN */
 .game {
-	float: left;
-	position: relative;
-	display: inline-block;
-	vertical-align: middle;
+
 	text-align: center;
-	width: 47%;
+	font-size:1em;
 	font-size: 1em;
-	height: 35%;
-	margin: 1%;
+	height: 30%;
+
 	border-radius: 5px;
-	border: 2px solid #F2F2F2;
+	border: 2px solid #FFFFFF;
 	background-color: #F2F2F2;
 	overflow: auto;
 }
@@ -272,3 +269,37 @@ LABEL
 	-o-transition-duration: .375s;
 }
 /*TOPCOAT STYLING*/
+
+
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -60px;
+}
+
+/* Set the fixed height of the footer here */
+#push,
+#footer {
+  height: 60px;
+}
+#footer {
+  background-color: #eee;
+}
+
+/* Lastly, apply responsive CSS fixes as necessary */
+#footer > .container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#credit {
+	margin-top:2%;
+}
