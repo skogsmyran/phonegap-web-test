@@ -103,8 +103,10 @@ var Gamecharades = function() {
 
 	this.getcharade = function() {
 		var length = charadesarray.length;
-        var generatedid = Math.floor((Math.random()*length)+1);
-        return charadesarray[generatedid];
+        var generatedid = Math.floor((Math.random()*length)-1);
+        var charade = charadesarray[generatedid];
+        charadesarray.splice(generatedid, 1);
+        return charade;
 	},
 
 	
