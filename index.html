@@ -35,11 +35,11 @@
 <div class="row">
   <div class="col-md-6 game" id="g1">
     <h1 class="gametitle">Charades</h1>
-    <p class="gamedescription">A game of charades, one player describes an object unknown to the others and they try to guess what the object is.</p>
+    <p class="gamedescription">One player gets a word to describe through gestures to his/her team.</p>
   </div>
   <div class="col-md-6 game" id="g2">
-    <h1 class="gametitle">Game 2</h1>
-     <p class="gamedescription">Not yet available in your region ;)</p>
+    <h1 class="gametitle">Truth or dare</h1>
+     <p class="gamedescription">"YOU can't play this right now!"</p>
   </div>
 <!--
   <div class="col-md-6 game" id="g3">
@@ -113,7 +113,25 @@
 
 <div class="contentwrapper">
 
-    <p id="charadeinstructions">Press start to play!</p><br>
+
+<form role="form">
+<div class="form-group">
+<label for="team1players">Add players to team 1</label>
+    <input class="form-control" id="team1players" placeholder="Player name">
+<p class="pull-right text-muted" id="addteam1">Add..</a>
+
+    </div>
+    <br>
+    <div class="form-group">
+<label for="team2players">Add players to team 2</label>
+    <input class="form-control" id="team2players" placeholder="Player name">
+    <p class="pull-right text-muted" id="addteam2">Add..</a>
+
+    </div>
+        </form>
+
+<br>
+    <p id="charadeinstructions">Press start to play!</p>
     <button id="startcharades" class="btn btn-default">Start</button><br>
 
 </div>
@@ -135,11 +153,24 @@
 <script id="teamscores" type='text/x-handlebars-template'>
 <div class="scores">
 {{#teams}}
-<p class="team">{{team}} Score: <b>{{score}} </b>  
-{{#players}}, 
-Players: {{player}}
+<p class="team">{{team}} Score: <b>{{score}} </b>  <br>
+Players: 
+{{#players}}
+{{player}},
 {{/players}}</p>
 {{/teams}}
+</div>
+</script>
+
+<script id="teamplayers" type='text/x-handlebars-template'>
+<div class="scores">
+{{#teams}}
+<p class="team">{{team}} Players: 
+{{#players}}
+{{player}},
+{{/players}}
+{{/teams}}
+</p>
 </div>
 </script>
 

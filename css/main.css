@@ -5,6 +5,14 @@ body
     background-color:;
 }
 
+#addteam1 {
+    font-size:0.8em;
+}
+
+#addteam2 {
+    font-size:0.8em;
+}
+
 .team {
     font-style:source-sans-pro,serif;
     font-size:0.8em;

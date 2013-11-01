@@ -34,6 +34,22 @@ var Gamecharades = function() {
 			window.localStorage.setItem("round", round);
 			self.startround();
 		});
+		this.el.on("click", "#addteam1", function() {
+			var player = $('#team1players').val();
+			teamscores.teams[0].players.push({ player: player });
+			console.log(teamscores.teams[0].players);
+			$('#rightwrapper').html(renderteams(teamscores));
+			$('#team1players').val("");
+			$('#team1players').attr("placeholder", "Add another player..");
+		});
+		this.el.on("click", "#addteam2", function() {
+			var player = $('#team2players').val();
+			teamscores.teams[1].players.push({ player: player });
+			console.log(teamscores.teams[1].players);
+			$('#rightwrapper').html(renderteams(teamscores))
+			$('#team2players').val("");
+			$('#team2players').attr("placeholder", "Add another player..");
+		});
 	},
 
 	this.endround = function() {
@@ -70,7 +86,7 @@ var Gamecharades = function() {
 		return;
 	}
 
-	this.newgame = function(rounds, t1players, t2players) {
+	this.newgame = function(rounds) {
 		var rounds = parseFloat(rounds);
 		window.localStorage.setItem("rounds", rounds);
 		window.localStorage.setItem("round", 0);
@@ -82,7 +98,6 @@ var Gamecharades = function() {
 	this.timer = function() {
 		var self = this;
 		var timer = 31;
-
 		var countdown = window.setInterval(function() {
 			if (timer > 0) {
 				timer = timer-1;
@@ -129,16 +144,13 @@ var endofgamehtml = $("#endofgame").html();
 var endofgame = Handlebars.compile(endofgamehtml);
 
 var renderscores = Handlebars.compile($('#teamscores').html());
+var renderteams = Handlebars.compile($('#teamplayers').html());
 
 var charadesarray = ["Wings","Guitar","Cow","Summer","Elbow","Rope","Ball","Rollerblade","Fang","Snowball","Turtle","Ear","Cheek","Smile","Jar","Tail","Basketball","Mouth","Telephone","Star","Tree","Airplane","Point","Alarm","Table tennis","Beg","Drum","Cape","Chin","Roof","Rain","Saddle","Room"]
 
 
 
 var teamscores = { teams: [ 
-	{ team:"Team 1", score:0, players: [
-	{ player: "" },
-	]},
-	{ team:"Team 2", score:0, players: [
-	{ player: "" },
-	]},
+	{ team:"Team 1", score:0, players: []},
+	{ team:"Team 2", score:0, players: []},
 	]};
