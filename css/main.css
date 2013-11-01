@@ -7,10 +7,12 @@ body
 
 #addteam1 {
     font-size:0.8em;
+    cursor:pointer;
 }
 
 #addteam2 {
     font-size:0.8em;
+    cursor:pointer;
 }
 
 .team {
